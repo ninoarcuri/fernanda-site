@@ -9,6 +9,7 @@
   --branco: #fff;
   --preto: #222;
   --verde-whatsapp: #25d366;
+  --marrom-act: #a97c50;
 }
 
 /* === Reset básico e configurações globais === */
@@ -110,12 +111,23 @@ footer a:hover {
   font-size: 1.1rem;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(201, 122, 155, 0.10);
+  text-decoration: none;
 }
 
-.btn-agendar:hover {
+.btn-agendar i {
+  margin-right: 8px;
+}
+
+.btn-agendar:hover,
+.btn-agendar:focus {
   background: var(--roxo-suave);
-  transform: translateY(-2px) scale(1.04);
+  color: var(--branco);
+  box-shadow: 0 4px 16px rgba(179, 157, 219, 0.18);
+  text-decoration: none;
+  transform: scale(1.04);
 }
 
 /* === Imagem de perfil circular e centralizada === */
@@ -128,6 +140,31 @@ footer a:hover {
   border-radius: 50%;
   border: 4px solid var(--rosa-medio);
   box-shadow: 0 2px 12px rgba(201, 122, 155, 0.12);
+}
+
+/* === Espaço para perfil na seção sobre === */
+.sobre-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.foto-perfil-grande {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--rosa-medio);
+  box-shadow: 0 2px 16px rgba(201, 122, 155, 0.15);
+  background: var(--cinza-claro);
+}
+
+.sobre-descricao {
+  max-width: 420px;
+  text-align: left;
 }
 
 /* === Seções principais === */
@@ -253,8 +290,122 @@ form button[type="submit"]:hover {
   transform: scale(1.08);
 }
 
-/* === Responsividade === */
-@media (max-width: 768px) {
+/* === FAQ estilizado === */
+.faq-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background: var(--branco);
+  box-shadow: 0 2px 8px rgba(201, 122, 155, 0.07);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: var(--rosa-medio);
+  color: var(--preto);
+  border: none;
+  outline: none;
+  padding: 18px 20px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.faq-question:hover,
+.faq-question.active {
+  background: var(--roxo-suave);
+  color: var(--branco);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--cinza-claro);
+  color: var(--preto);
+  padding: 0 20px;
+  transition: max-height 0.3s ease, padding 0.3s;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding: 16px 20px;
+}
+
+/* === ACT Timeline */
+.act-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 32px;
+  gap: 0;
+}
+
+.act-step {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.act-step:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.act-card {
+  background: var(--marrom-act);
+  color: #fff;
+  padding: 11px 14px;
+  border-radius: 8px;
+  margin: 8px 0;
+  max-width: 98%;    /* Aumenta o espaço horizontal ocupado */
+  font-size: 1.0rem;
+  box-shadow: 0 2px 12px rgba(169, 124, 80, 0.10);
+  text-align: left;
+  font-family: inherit;
+  position: relative;
+}
+
+/* Linha conectando os cards */
+.act-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 2px;
+  height: 9px;
+  background: var(--marrom-act);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+@media (max-width: 700px) {
+  .act-step,
+  .act-step:nth-child(even) {
+    justify-content: center;
+  }
+  .act-card {
+    margin: 24px 0;
+    max-width: 98vw;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .act-card {
+    padding: 16px 10px;
+    font-size: 1rem;
+    max-width: 98vw;
+  }
   .container {
     padding: 0 10px;
   }
@@ -288,6 +439,15 @@ form button[type="submit"]:hover {
 
   form {
     padding: 18px 8px;
+  }
+
+  .sobre-perfil {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .sobre-descricao {
+    text-align: center;
   }
 }
 
@@ -330,4 +490,67 @@ form button[type="submit"]:hover {
   color: var(--rosa-escuro);
   font-size: 2rem;
   letter-spacing: 1px;
+}
+
+/* Tooltip customizado para os pilares */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background: var(--roxo-suave);
+  color: var(--branco);
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 14px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.98rem;
+  box-shadow: 0 2px 8px rgba(179,157,219,0.18);
+}
+
+.tooltip:hover .tooltiptext,
+.tooltip:focus .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Carrossel de fundo no header */
+.header-carousel {
+  position: relative;
+  min-height: 320px;
+  background-size: cover;
+  background-position: center;
+  animation: carousel-bg 16s infinite;
+  transition: background-image 1s;
+}
+
+@keyframes carousel-bg {
+  0%   { background-image: url('images/bg1.jpg'); }
+  25%  { background-image: url('images/bg2.jpg'); }
+  50%  { background-image: url('images/bg3.jpg'); }
+  75%  { background-image: url('images/bg4.jpg'); }
+  100% { background-image: url('images/bg1.jpg'); }
+}
+
+/* Opcional: sobreposição para melhorar contraste do texto */
+.header-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.35); /* escurece um pouco */
+  z-index: 1;
+}
+
+.header-carousel .container {
+  position: relative;
+  z-index: 2;
 }
