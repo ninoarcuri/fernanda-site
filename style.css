@@ -1,15 +1,63 @@
-/* === Variáveis de cor: paleta suave e feminina === */
+/* === Variáveis de cor: paleta suave, moderna e orgânica === */
 :root {
+  /* Paleta principal e neutros */
+  --branco: #fff;
+  --preto: #232323;
+  --cinza-claro: #f6f6f4;
+  --cinza-medio: #bdbdbd;
+
+  /* Tons orgânicos e modernos */
   --rosa-claro: #f8e1e7;
   --rosa-medio: #e7b8c9;
   --rosa-escuro: #c97a9b;
   --roxo-suave: #b39ddb;
-  --cinza-claro: #f5f5f5;
-  --cinza-medio: #888;
-  --branco: #fff;
-  --preto: #222;
-  --verde-whatsapp: #25d366;
+  --verde-acinzentado: #bfcfc2;
+  --verde-musgo: #8fa58c;
+  --marrom-suave: #bfa89e;
+  --marrom-escuro: #8c6e63;
+
+  /* Seções específicas */
   --marrom-act: #a97c50;
+  --act-marrom: #bfa89e;
+  --act-marrom-claro: #f3ebe7;
+  --act-verde: #bfcfc2;
+  --act-bege: #f6f6f4;
+
+  --faq-verde: #bfcfc2;
+  --faq-marrom: #bfa89e;
+  --faq-bege: #f6f6f4;
+  --faq-branco: #fff;
+
+  --pilar-verde: #bfcfc2;
+  --pilar-marrom: #bfa89e;
+  --pilar-bege: #f6f6f4;
+  --pilar-branco: #fff;
+
+  --verde-whatsapp: #25d366;
+}
+
+/* Paleta orgânica para ACT */
+:root {
+  --act-marrom: #a97c50;
+  --act-marrom-claro: #e9ded6;
+  --act-verde: #b6c7a3;
+  --act-bege: #f7f3ef;
+}
+
+/* Paleta orgânica para FAQ */
+:root {
+  --faq-verde: #b6c7a3;
+  --faq-marrom: #a97c50;
+  --faq-bege: #f7f3ef;
+  --faq-branco: #fff;
+}
+
+/* Paleta orgânica para Pilares */
+:root {
+  --pilar-verde: #b6c7a3;
+  --pilar-marrom: #a97c50;
+  --pilar-bege: #f7f3ef;
+  --pilar-branco: #fff;
 }
 
 /* === Reset básico e configurações globais === */
@@ -147,9 +195,14 @@ footer a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 40px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(248, 225, 231, 0.85); /* Suave, usa o --rosa-claro translúcido */
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(191, 168, 158, 0.10);
+  padding: 36px 28px;
 }
 
 .foto-perfil-grande {
@@ -298,45 +351,66 @@ form button[type="submit"]:hover {
 }
 
 .faq-item {
-  margin-bottom: 16px;
-  border-radius: 10px;
-  background: var(--branco);
-  box-shadow: 0 2px 8px rgba(201, 122, 155, 0.07);
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: var(--faq-branco);
+  box-shadow: 0 2px 12px rgba(169, 124, 80, 0.08);
   overflow: hidden;
+  border-left: 6px solid var(--faq-marrom);
+  transition: box-shadow 0.2s;
+}
+
+.faq-item.open,
+.faq-item:hover {
+  box-shadow: 0 6px 24px rgba(169, 124, 80, 0.14);
 }
 
 .faq-question {
   width: 100%;
-  background: var(--rosa-medio);
-  color: var(--preto);
+  background: var(--faq-verde);
+  color: #4d3a23;
   border: none;
   outline: none;
-  padding: 18px 20px;
+  padding: 18px 24px;
   font-size: 1.08rem;
   font-weight: 600;
   cursor: pointer;
   text-align: left;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+  border-radius: 18px 18px 0 0;
 }
 
 .faq-question:hover,
 .faq-question.active {
-  background: var(--roxo-suave);
-  color: var(--branco);
+  background: var(--faq-marrom);
+  color: var(--faq-branco);
 }
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  background: var(--cinza-claro);
-  color: var(--preto);
-  padding: 0 20px;
+  background: var(--faq-bege);
+  color: #4d3a23;
+  padding: 0 24px;
   transition: max-height 0.3s ease, padding 0.3s;
+  font-size: 1rem;
 }
 
 .faq-item.open .faq-answer {
   max-height: 200px;
-  padding: 16px 20px;
+  padding: 16px 24px;
+}
+
+@media (max-width: 700px) {
+  .faq-list {
+    padding: 0 8px;
+  }
+  .faq-question,
+  .faq-answer {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
 /* === ACT Timeline */
@@ -394,8 +468,10 @@ form button[type="submit"]:hover {
     justify-content: center;
   }
   .act-card {
-    margin: 24px 0;
+    margin: 14px 0;
     max-width: 98vw;
+    padding: 18px 10px;
+    font-size: 1rem;
   }
 }
 
@@ -451,6 +527,77 @@ form button[type="submit"]:hover {
   }
 }
 
+/* Estilo para a seção intro */
+.hero-intro {
+  background: linear-gradient(120deg, var(--rosa-claro), var(--roxo-suave));
+  padding: 60px 0 40px 0;
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.intro-foto {
+  flex: 0 0 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--rosa-medio);
+  box-shadow: 0 4px 24px rgba(201, 122, 155, 0.15);
+  background: var(--cinza-claro);
+}
+
+.intro-texto {
+  flex: 1;
+  min-width: 260px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.intro-texto h2 {
+  font-size: 2.2rem;
+  color: var(--rosa-escuro);
+  margin-bottom: 12px;
+}
+
+.intro-destaque {
+  font-weight: bold;
+  color: var(--roxo-suave);
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.intro-boasvindas {
+  font-style: italic;
+  color: var(--rosa-escuro);
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 900px) {
+  .intro-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 16px;
+  }
+  .intro-texto {
+    text-align: center;
+  }
+}
+
 /* Personalização individual de cada seção */
 .hero-intro {
   background: linear-gradient(120deg, var(--rosa-claro), var(--roxo-suave));
@@ -469,7 +616,7 @@ form button[type="submit"]:hover {
 }
 
 .hero-sobre {
-  background: linear-gradient(120deg, var(--branco) 60%, var(--rosa-claro) 100%);
+  background: linear-gradient(120deg, var(--rosa-claro) 60%, var(--verde-acinzentado) 100%);
 }
 
 .hero-faq {
@@ -553,4 +700,334 @@ form button[type="submit"]:hover {
 .header-carousel .container {
   position: relative;
   z-index: 2;
+}
+
+/* Atendimentos */
+.atendimentos-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.atendimentos-texto {
+  flex: 1;
+  min-width: 260px;
+  max-width: 600px;
+}
+.atendimentos-img img {
+  width: 220px;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(201, 122, 155, 0.12);
+}
+
+/* ACT já está estilizado em escada, mantenha o CSS atual */
+
+/* Sobre */
+.sobre-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(248, 225, 231, 0.85); /* Suave, usa o --rosa-claro translúcido */
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(191, 168, 158, 0.10);
+  padding: 36px 28px;
+}
+
+.foto-perfil-grande {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--rosa-medio);
+  box-shadow: 0 4px 24px rgba(201, 122, 155, 0.15);
+  background: var(--cinza-claro);
+}
+
+.sobre-descricao {
+  max-width: 420px;
+  color: var(--marrom-escuro);
+  font-size: 1.12rem;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+}
+
+.sobre-descricao p {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .sobre-perfil {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 10px;
+  }
+  .sobre-descricao {
+    text-align: center;
+  }
+}
+
+/* Agendamento */
+.agendamento-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.agendamento-texto {
+  flex: 1;
+  min-width: 260px;
+  max-width: 500px;
+}
+.agendamento-img img {
+  width: 180px;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(201, 122, 155, 0.12);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .atendimentos-content,
+  .agendamento-content,
+  .sobre-perfil {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 16px;
+  }
+  .atendimentos-texto,
+  .agendamento-texto,
+  .sobre-descricao {
+    text-align: center;
+  }
+}
+
+/* Estilo para perguntas anônimas */
+.anonimo-box {
+  background: var(--branco);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(179,157,219,0.08);
+  max-width: 480px;
+  margin: 32px auto 0 auto;
+  padding: 32px 24px 18px 24px;
+  text-align: center;
+}
+
+.anonimo-box p {
+  color: var(--roxo-suave);
+  font-size: 1.08rem;
+  margin-bottom: 18px;
+}
+
+.anonimo-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1.5px solid var(--rosa-medio);
+  padding: 14px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  resize: vertical;
+  background: var(--cinza-claro);
+  color: var(--preto);
+  transition: border 0.2s;
+}
+
+.anonimo-form textarea:focus {
+  border-color: var(--roxo-suave);
+  outline: none;
+}
+
+.anonimo-form button {
+  background: var(--roxo-suave);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(179,157,219,0.10);
+}
+
+.anonimo-form button:hover {
+  background: var(--rosa-medio);
+}
+
+.anonimo-info {
+  display: block;
+  margin-top: 12px;
+  color: var(--cinza-medio);
+  font-size: 0.95rem;
+}
+
+/* === ACT Timeline */
+.act-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.act-step {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.act-step:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.act-card {
+  background: linear-gradient(120deg, var(--act-marrom-claro) 80%, var(--act-verde) 100%);
+  color: #4d3a23;
+  padding: 28px 32px;
+  border-radius: 32px 32px 32px 8px;
+  margin: 18px 0;
+  max-width: 420px;
+  font-size: 1.08rem;
+  box-shadow: 0 4px 24px rgba(169, 124, 80, 0.10);
+  text-align: left;
+  font-family: 'Georgia', serif;
+  border-left: 6px solid var(--act-marrom);
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.act-card strong {
+  color: var(--act-marrom);
+  font-size: 1.08em;
+}
+
+.act-card:hover {
+  box-shadow: 0 8px 32px rgba(169, 124, 80, 0.18);
+  background: linear-gradient(120deg, var(--act-verde) 80%, var(--act-marrom-claro) 100%);
+}
+
+.act-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 3px;
+  height: 32px;
+  background: var(--act-marrom);
+  transform: translateX(-50%);
+  z-index: 0;
+  border-radius: 2px;
+  opacity: 0.25;
+}
+
+/* Seção Pilares */
+.hero-pilares {
+  background: linear-gradient(120deg, var(--pilar-bege) 60%, var(--pilar-verde) 100%);
+  padding: 60px 0 40px 0;
+}
+
+.hero-pilares h2 {
+  color: var(--pilar-marrom);
+  font-size: 2.1rem;
+  text-align: center;
+  margin-bottom: 36px;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+.pilares-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.pilares-lista .tooltip {
+  background: var(--pilar-branco);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(169, 124, 80, 0.08);
+  padding: 28px 22px 18px 22px;
+  min-width: 210px;
+  max-width: 260px;
+  text-align: center;
+  color: #4d3a23;
+  font-size: 1.08rem;
+  font-family: 'Georgia', serif;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border-left: 6px solid var(--pilar-marrom);
+}
+
+.pilares-lista .tooltip:hover,
+.pilares-lista .tooltip:focus {
+  box-shadow: 0 6px 24px rgba(169, 124, 80, 0.14);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.pilares-lista i {
+  font-size: 2rem;
+  color: var(--pilar-marrom);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pilares-lista span {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* Tooltip customizado */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  width: 240px;
+  background: var(--pilar-marrom);
+  color: var(--pilar-branco);
+  text-align: left;
+  border-radius: 8px;
+  padding: 12px 16px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 110%;
+  transform: translateX(-50%);
+  font-size: 0.98rem;
+  box-shadow: 0 2px 8px rgba(169,124,80,0.18);
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltiptext,
+.tooltip:focus .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .pilares-lista {
+    gap: 16px;
+  }
+  .pilares-lista .tooltip {
+    min-width: 160px;
+    max-width: 98vw;
+    padding: 18px 8px 12px 8px;
+    font-size: 1rem;
+  }
 }
