@@ -7,27 +7,31 @@
   <meta name="keywords" content="psicóloga, psicologia, terapia, atendimento psicológico, online, Fernanda Celestino, acolhimento, empatia, desenvolvimento emocional" />
   <meta name="author" content="Fernanda Celestino" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="style.css">
   <title>Fernanda Celestino | Psicóloga</title>
 </head>
 <body>
 
-  <header class="header-carousel">
-    <div class="container">
-      <h1>Fernanda Celestino</h1>
-      <p>Psicóloga de mulheres | CRP 06/199648</p>
-      <nav>
-        <span id="menu-icon">&#9776;</span>
-        <ul>
-          <li><a href="#intro">Início</a></li>
-          <li><a href="#atendimentos">Atendimentos</a></li>
-          <li><a href="#pilares">Pilares</a></li>
-          <li><a href="#act">ACT</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#agendamento">Agendamento</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+  <header class="header">
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="images/natureza.png" alt="Psicologia" class="logo-img">
+        <div>
+          <span class="header-title">
+            Psicóloga Fernanda<br>
+            <span class="sobrenome">Celestino</span>
+          </span>
+          <div class="header-crp">CRP 06/199648</div>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="#inicio">Início</a>
+        <a href="#atendimentos">Atendimentos</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#act">ACT</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#faq">Perguntas frequentes</a>
       </nav>
     </div>
   </header>
@@ -35,75 +39,149 @@
   <main>
     <section id="intro" class="hero hero-intro">
       <div class="intro-content">
-        <div class="intro-foto">
-          <img src="images/prfil.png" alt="Foto da psicóloga Fernanda Celestino" class="foto-perfil">
-        </div>
         <div class="intro-texto">
-          <h2>Oiê, eu sou a Fernanda Celestino</h2>
-          <p class="intro-destaque">Psicóloga de mulheres pela Terapia de Aceitação e Compromisso (ACT).</p>
-          <p>Se você está buscando por psicoterapia nesse momento, esse é um passo grandioso, que demonstra compromisso e pode gerar grandes transformações na sua vida.</p>
-          <p>Existem momentos em que a vida se torna difícil e precisamos descobrir novas estratégias pra lidar com o que dói. Essas estratégias podem ser encontradas por meio da psicoterapia on-line.</p>
-          <p class="intro-boasvindas">Sinta-se bem-vinda!</p>
+          <h1>Psicoterapia on-line para mulheres adultas (a partir dos 18 anos) ao redor do Brasil.</h1>
+          <p>Guio mulheres adultas que vivem uma montanha-russa emocional a caminhos de mais estabilidade e autonomia.</p>
+        </div>
+        <div class="intro-foto-cheia">
+          <img src="images/123 (2).jpeg" alt="Psicóloga Fernanda Celestino" />
         </div>
       </div>
     </section>
+    
+    <!-- BLOCO 2: Sintomas - Caixas com sintomas comuns, organizadas em grid -->
+  <section class="bloco-sintomas hero-act">
+    <div class="sintomas-container">
+      <h2>Se você está aqui, é provável que você esteja enfrentando...</h2>
+      <div class="sintomas-grid" id="sintomas-lista"></div>
+      <p class="sintomas-rodape">
+        Existem caminhos mais saudáveis e significativos de viver!
+      </p>
+       <button class="sobre-agende-btn">Agende sua consulta inicial</button>
 
-    <section id="atendimentos" class="hero hero-atendimentos">
-      <div class="atendimentos-content">
-        <div class="atendimentos-texto">
-          <h2>Como funcionam os atendimentos comigo?</h2>
-          <p>Ofereço uma sessão de até 30 minutos, sem custos, para descobrirmos juntas se sou a psicóloga certa para você.</p>
-          <p>As sessões são online, via Google Meet, semanais e duram de 50 minutos a 1 hora.</p>
-          <a href="https://form.respondi.app/lyML7wxf" target="_blank" class="btn-agendar">
-            <i class="fas fa-calendar-check"></i> Agende sua consulta inicial
-          </a>
-        </div>
-        <div class="atendimentos-img">
-          <img src="images/at.png" alt="Atendimento psicológico online" />
-        </div>
+    </div>
+  </section>
+
+  <script>
+  // filepath: c:\Users\Casa\fernanda-site\components\Sintomas.html
+  const sintomas = [
+    "Ansiedade frequente e intensa que prejudica seu dia a dia e causa preocupação.",
+    "Oscilações de humor frequentes e duradouras, que causam exaustão.",
+    "Desmotivação, desânimo e perda de interesse em atividades que você costumava gostar.",
+    "Relações conflituosas constantes com familiares, amigos ou colegas de trabalho e dificuldade de manter relacionamentos."
+  ];
+
+  const sintomasLista = document.getElementById('sintomas-lista');
+  sintomas.forEach(texto => {
+    const div = document.createElement('div');
+    div.className = 'sintoma-card';
+    div.textContent = texto;
+    sintomasLista.appendChild(div);
+  });
+  </script>
+
+   <!-- BLOCO 3: Acolhimento - Texto de acolhimento e incentivo à busca por terapia -->
+  <section class="bloco-acolhimento">
+    <div class="acolhimento-content">
+      <h2>Você merece acolhimento e cuidado</h2>
+      <p>
+        Aqui, o seu espaço é respeitado e suas emoções são ouvidas sem julgamentos. 
+        O processo terapêutico é construído junto com você, para que encontre mais leveza, autonomia e sentido na sua vida.
+      </p>
+    </div>
+  </section>
+
+    <section id="atendimentos" class="bloco-atendimentos">
+  <div class="atendimentos-container">
+    <h2>E como funcionam os atendimentos comigo?</h2>
+    <div class="atendimentos-lista">
+      <div class="atendimento-card card-esquerda">
+        Entendendo que escolher uma psicóloga pode ser difícil, eu ofereço uma sessão de no máximo 30 minutos, sem custos, para descobrirmos, juntas, se eu sou a psicóloga certa para você.
       </div>
-    </section>
+      <div class="atendimento-card card-direita">
+        Assim, começamos o processo psicoterapêutico da melhor forma possível.
+      </div>
+      <div class="atendimento-card card-esquerda">
+        As sessões são on-line, via Google Meet, semanais e duram de 50 minutos a 1 hora.
+      </div>
+        
+      <button class="sobre-agende-btn">Agende sua consulta inicial</button>
+
+    </div>
+  </div>
+</section>
 
     <section id="pilares" class="hero hero-pilares">
-      <h2>Pilares do meu trabalho</h2>
-      <ul class="pilares-lista">
-        <li class="tooltip">
-          <i class="fas fa-heart"></i>
-          <span>Psicoterapia guiada por valores</span>
-          <span class="tooltiptext">Psicoterapia guiada por valores, focada no que realmente é importante pra você.</span>
-        </li>
-        <li class="tooltip">
-          <i class="fas fa-hands-helping"></i>
-          <span>Colaborativa</span>
-          <span class="tooltiptext">Colaborativa, trabalhamos juntas como uma equipe e tomamos decisões em conjunto.</span>
-        </li>
-        <li class="tooltip">
-          <i class="fas fa-map"></i>
-          <span>Valorizo sua autonomia</span>
-          <span class="tooltiptext">Valorizo sua autonomia, a terapia funciona como um “mapa”, quem caminha é você.</span>
-        </li>
-        <li class="tooltip">
-          <i class="fas fa-globe"></i>
-          <span>Culturalmente sensível</span>
-          <span class="tooltiptext">Culturalmente sensível, me preocupo com quem você é, quais são seus costumes e características.</span>
-        </li>
-        <li class="tooltip">
-          <i class="fas fa-hand-holding-heart"></i>
-          <span>Relação terapêutica genuína</span>
-          <span class="tooltiptext">Relação terapêutica genuína, não estou acima de você.</span>
-        </li>
-        <li class="tooltip">
-          <i class="fas fa-headphones"></i>
-          <span>Escuta atenta</span>
-          <span class="tooltiptext">Escuta atenta e estarei inteiramente presente pra ti.</span>
-        </li>
-        <li class="tooltip">
-          <i class="fas fa-lock"></i>
-          <span>Sigilo profissional</span>
-          <span class="tooltiptext">Sigilo profissional - todas as suas informações compartilhadas comigo estarão seguras.</span>
-        </li>
-      </ul>
-    </section>
+  <div class="atendimentos-container">
+    <h2>Pilares do meu trabalho</h2>
+    <ul class="pilares-lista" id="pilares-lista">
+      <li class="pilar-item">
+        <span>Colaborativa</span>
+        <div class="pilar-desc">Colaborativa: O processo é construído junto com você, respeitando seu tempo e suas necessidades.</div>
+      </li>
+      <li class="pilar-item">
+        <span>Psicoterapia guiada por valores</span>
+        <div class="pilar-desc">Psicoterapia guiada por valores: O foco está em identificar e viver de acordo com o que é mais importante para você.</div>
+      </li>
+      <li class="pilar-item">
+        <span>Valorizo sua autonomia</span>
+        <div class="pilar-desc">Valorizo sua autonomia: Você é protagonista da sua trajetória e das suas escolhas.</div>
+      </li>
+      <li class="pilar-item">
+        <span>Culturalmente sensível</span>
+        <div class="pilar-desc">Culturalmente sensível: Respeito e acolho sua história, contexto e identidade.</div>
+      </li>
+      <li class="pilar-item">
+        <span>Relação terapêutica genuína</span>
+        <div class="pilar-desc">Relação terapêutica genuína: Construo um vínculo de confiança, respeito e empatia.</div>
+      </li>
+      <li class="pilar-item">
+        <span>Escuta atenta</span>
+        <div class="pilar-desc">Escuta atenta: Seu espaço para ser ouvida sem julgamentos, com atenção e cuidado.</div>
+      </li>
+      <li class="pilar-item">
+        <span>Sigilo profissional</span>
+        <div class="pilar-desc">Sigilo profissional: Tudo o que é compartilhado é tratado com ética e confidencialidade.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+// filepath: c:\Users\Casa\fernanda-site\components\Pilares.html
+const itens = document.querySelectorAll('.pilar-item');
+itens.forEach(item => {
+  item.addEventListener('click', function() {
+    itens.forEach(i => {
+      i.classList.remove('ativo');
+      i.querySelector('.pilar-desc').classList.remove('show');
+    });
+    this.classList.add('ativo');
+    this.querySelector('.pilar-desc').classList.add('show');
+  });
+});
+</script>
+
+  <!-- BLOCO 5: Sobre mim - Apresentação pessoal e formação -->
+  <section id="sobre" class="bloco-sobre bloco-azul">
+  <div class="sobre-container">
+    <div class="sobre-foto">
+      <img src="images/12.jpeg" alt="Psicóloga Fernanda Cristina Celestino">
+    </div>
+    <div class="sobre-conteudo">
+      <p>
+        Me chamo Fernanda Cristina Celestino e sou Psicóloga formada pela Universidade São Judas Tadeu (USJT) e formada em Terapia de Aceitação e Compromisso pela Ello+.
+      </p>
+      <p>
+        Carrego comigo desde a graduação uma Psicologia crítica e transformadora da realidade social das pessoas, que para além de reduzir o sofrimento humano, modifica a relação com a vida.
+      </p>
+      <p>
+        Movida por esse compromisso social, realizei movimentos pra centrar meus atendimentos a apenas mulheres adultas (a partir de 18 anos).
+      </p>
+      <button class="sobre-agende-btn">Agende sua consulta inicial</button>
+    </div>
+  </div>
+</section>
 
     <section id="act" class="hero hero-act">
       <h2>O que é a Terapia de Aceitação e Compromisso?</h2>
@@ -118,7 +196,7 @@
         <div class="act-step">
           <div class="act-card">
             <strong>A ACT enxerga que o sofrimento humano é causado pela inflexibilidade psicológica,</strong>
-            <br><br>
+            <br>
             a dificuldade de se relacionar com sentimentos e pensamentos de formas que levem a caminhos significativos.
           </div>
         </div>
@@ -132,17 +210,6 @@
       </div>
     </section>
 
-    <section id="sobre" class="hero hero-sobre">
-      <h2>Quem sou eu!</h2>
-      <div class="sobre-perfil">
-        <img src="images/prfil.png" alt="Foto da psicóloga Fernanda Celestino" class="foto-perfil-grande">
-        <div class="sobre-descricao">
-          <p>Me chamo Fernanda e sou Psicóloga formada pela Universidade São Judas Tadeu (USJT) e formanda em ACT pela Ello+.</p>
-          <p>Desde a graduação, defendo uma Psicologia crítica e transformadora da realidade social.</p>
-          <p>Movida por esse compromisso social, foco meus atendimentos exclusivamente em mulheres adultas (a partir de 18 anos).</p>
-        </div>
-      </div>
-    </section>
 
     <section id="faq" class="hero hero-faq">
       <h2>Dúvidas frequentes</h2>
@@ -174,51 +241,12 @@
       </div>
     </section>
 
-    <section id="agendamento" class="hero hero-agendamento">
-      <div class="agendamento-content">
-        <div class="agendamento-texto">
-          <h2>Psicoterapia para mulheres</h2>
-          <p>Meu trabalho é 100% centrado em mulheres adultas, com cuidado integral à saúde mental feminina.</p>
-          <a href="https://form.respondi.app/lyML7wxf" target="_blank" class="btn-agendar">
-            <i class="fas fa-calendar-check"></i> Agende sua consulta inicial
-          </a>
-        </div>
-        <div class="agendamento-img">
-          <img src="images/rosa.png" alt="rosa" />
-        </div>
-      </div>
-    </section>
-
-    <section id="contato" class="hero hero-contato">
-      <h2>Pergunte anonimamente</h2>
-      <div class="anonimo-box">
-        <p>
-          Sua pergunta é 100% <strong>anônima</strong>! <br>
-          As respostas serão publicadas nos <a href="https://instagram.com/psi.celestino" target="_blank" style="color: var(--rosa-escuro); text-decoration: underline;">stories do Instagram</a>.
-        </p>
-        <form action="https://formsubmit.co/seu-email@gmail.com" method="POST" class="anonimo-form">
-          <textarea name="mensagem" rows="5" placeholder="Digite sua pergunta ou comentário aqui..." required></textarea>
-          <button type="submit"><i class="fas fa-paper-plane"></i> Enviar pergunta anônima</button>
-        </form>
-        <small class="anonimo-info">
-          Nenhum dado pessoal é coletado. Você pode perguntar o que quiser, com total sigilo.
-        </small>
-      </div>
-    </section>
-  </main>
-
   <footer>
     <p>&copy; 2025 Fernanda Celestino | Psicóloga CRP 06/199648</p>
     <div>
       <a href="https://instagram.com/psi.celestino" target="_blank" aria-label="Instagram">Instagram</a>
-      <span style="margin: 0 8px;">|</span>
-      <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" aria-label="WhatsApp">WhatsApp</a>
     </div>
   </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/55XXXXXXXXXXX" target="_blank" aria-label="x">
-    <img src="https://img.icons8.com/?size=100&id=108653&format=png&color=000000" style="width:36px; height:36px;">
-  </a>
 
   <script src="script.js"></script>
 </body>
