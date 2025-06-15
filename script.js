@@ -51,4 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.toggle('active');
     });
   });
+
+  // Direciona o botão "Agende sua consulta inicial" para o link externo
+  const btn = document.querySelector('.sobre-agende-btn');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      window.open('https://form.respondi.app/lyML7wxf', '_blank');
+    });
+  }
 });
+
+<script src="script.js"></script>

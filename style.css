@@ -17,7 +17,7 @@
   --marrom-escuro: #8c6e63;
 
   /* Seções específicas */
-  --marrom-act: #a97c50;
+  --marrom-act: #435743;
   --act-marrom: #bfa89e;
   --act-marrom-claro: #f3ebe7;
   --act-verde: #bfcfc2;
@@ -75,7 +75,7 @@ body {
 }
 
 h1, h2, h3 {
-  color: var(--rosa-escuro);
+  color: #383934;
   font-weight: 600;
 }
 
@@ -356,7 +356,7 @@ form button[type="submit"]:hover {
   background: var(--faq-branco);
   box-shadow: 0 2px 12px rgba(169, 124, 80, 0.08);
   overflow: hidden;
-  border-left: 6px solid var(--faq-marrom);
+  border-left: 6px solid #435743;
   transition: box-shadow 0.2s;
 }
 
@@ -368,7 +368,7 @@ form button[type="submit"]:hover {
 .faq-question {
   width: 100%;
   background: var(--faq-verde);
-  color: #4d3a23;
+  color: #383934;
   border: none;
   outline: none;
   padding: 18px 24px;
@@ -391,7 +391,7 @@ form button[type="submit"]:hover {
   max-height: 0;
   overflow: hidden;
   background: var(--faq-bege);
-  color: #4d3a23;
+  color: #383934 ;
   padding: 0 24px;
   transition: max-height 0.3s ease, padding 0.3s;
   font-size: 1rem;
@@ -552,7 +552,7 @@ form button[type="submit"]:hover {
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 24px;
-  color: #383934;
+  color: #f6f6f2 ;
 }
 
 .intro-texto p {
@@ -596,9 +596,9 @@ form button[type="submit"]:hover {
 }
 
 .intro-foto-cheia img {
-  width: 220px;
+  width: 500px;
   height: auto;
-  border-radius: 18px;
+  border-radius: 0px;
   box-shadow: 0 4px 24px #0002;
   object-fit: cover;
   background: #e0e0e0;
@@ -655,7 +655,7 @@ form button[type="submit"]:hover {
 /* Opcional: destaque nos títulos de cada seção */
 .hero h2 {
   margin-bottom: 18px;
-  color: var(--rosa-escuro);
+  color: #383934 ;
   font-size: 2rem;
   letter-spacing: 1px;
 }
@@ -914,7 +914,7 @@ form button[type="submit"]:hover {
 
 .act-card {
   background: linear-gradient(120deg, #7d8d7d  80%, var(--act-verde) 100%);
-  color: #4d3a23;
+  color: #f6f6f2;
   padding: 28px 32px;
   border-radius: 32px 32px 32px 8px;
   margin: 18px 0;
@@ -923,13 +923,13 @@ form button[type="submit"]:hover {
   box-shadow: 0 4px 24px rgba(169, 124, 80, 0.10);
   text-align: left;
   font-family: 'Georgia', serif;
-  border-left: 6px solid var(--act-marrom);
+  border-left: 6px solid #435743;
   position: relative;
   transition: box-shadow 0.2s;
 }
 
 .act-card strong {
-  color: #383934 ;
+  color: #f6f6f2;
   font-size: 1.08em;
 }
 
@@ -965,7 +965,7 @@ form button[type="submit"]:hover {
 }
 
 .hero-pilares h2 {
-  color: #383934 ;
+  color: #171815;
   font-size: 2.3rem;
   font-family: 'Georgia', serif;
   font-weight: 700;
@@ -988,7 +988,7 @@ form button[type="submit"]:hover {
   border-radius: 16px;
   padding: 24px 32px;
   font-size: 1.15rem;
-  color: #383934 ;
+  color: #fff ;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
@@ -1006,8 +1006,8 @@ form button[type="submit"]:hover {
 
 .pilar-item.ativo {
   background: #7d8d7d;
-  color: #292b20 ;
-  border-color: #0bf5d2;
+  color: #383934;  
+  border-color: #f7f7f7;
 }
 
 .pilar-desc {
@@ -1020,7 +1020,7 @@ form button[type="submit"]:hover {
   max-width: 90%;
   font-size: 1.08rem;
   color: #383934;
-  background: #51885f;
+  background: #bfe2c8;
   border-radius: 12px;
   padding: 18px 10px;
   box-shadow: 0 2px 12px #7d8d7d11;
@@ -1070,7 +1070,7 @@ form button[type="submit"]:hover {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px 32px 16px 32px;
+  padding: 0px 0px 0px 0px;
 }
 
 .header-logo {
@@ -1080,11 +1080,10 @@ form button[type="submit"]:hover {
 }
 
 .logo-img {
-  height: 56px;
-  width: 56px;
-  object-fit: contain;
+  height: 200px;
+  width: auto;
+  object-fit: cover;
   border-radius: 8px;
-  background: #e0e0e0;
 }
 
 .header-title {
@@ -1152,7 +1151,7 @@ form button[type="submit"]:hover {
 }
 
 .bloco-sintomas h2 {
-  color: #7d8d7d;
+  color: #383934 ;
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 36px;
@@ -1171,7 +1170,7 @@ form button[type="submit"]:hover {
 .sintoma-card {
   background: linear-gradient(135deg, #d6e7d0 80%, #fff 100%);
   border-radius: 0;
-  box-shadow: 8px 8px 0 #c7a98b33;
+  box-shadow: 8px 8px 0 #d4e9d4 ;
   padding: 32px 28px 28px 28px;
   font-size: 1.15rem;
   color: #383934;
@@ -1181,7 +1180,7 @@ form button[type="submit"]:hover {
   max-width: 480px;
   width: 100%;
   text-align: left;
-  border-left: 6px solid #c7a98b;
+  border-left: 6px solid #435743 ;
   border-bottom: none;
   border-top: none;
   border-right: none;
@@ -1308,7 +1307,7 @@ form button[type="submit"]:hover {
 
 
 .bloco-atendimentos h2 {
-  color: #7d8d7d;
+  color: #383934 ;
   font-size: 2rem;
   font-family: 'Georgia', serif;
   font-weight: 700;
@@ -1360,12 +1359,10 @@ form button[type="submit"]:hover {
   content: "";
   position: absolute;
   left: 40px;
-  top: 80px;
+  top: 70px;
   width: calc(100% - 80px);
-  height: calc(100% - 160px);
+  height: calc(100% - 350px);
   border-left: 3px solid #95b8b3;
-  border-bottom: 3px solid #95b8b3;
-  border-radius: 0 0 0 60px;
   transform: skewY(-18deg);
   z-index: 0;
   pointer-events: none;
@@ -1409,17 +1406,16 @@ form button[type="submit"]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 32px;
 }
 
 .sobre-foto img {
-  width: 260px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 8px solid #fff;
+  width: 500px;
+  height: auto;
+  border-radius: 0px;
   box-shadow: 0 2px 16px #0003;
   background: #fff;
-  display: block;
+  object-fit: cover;
 }
 
 .sobre-conteudo {
@@ -1442,8 +1438,8 @@ form button[type="submit"]:hover {
 
 .sobre-agende-btn {
   margin-top: 24px;
-  background: #fff;
-  color: #7d8d7d;
+  background: #435743;
+  color: #fff;
   border: none;
   border-radius: 8px;
   padding: 14px 32px;
@@ -1456,7 +1452,7 @@ form button[type="submit"]:hover {
 }
 
 .sobre-agende-btn:hover {
-  background: #95b8b3;
+  background: #bed3be ;
   color: #fff;
   box-shadow: 0 4px 18px #7d8d7d44;
 }
