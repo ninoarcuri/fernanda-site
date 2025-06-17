@@ -605,17 +605,57 @@ form button[type="submit"]:hover {
 }
 
 @media (max-width: 900px) {
+  /* Ajusta o header */
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 8px 0 8px;
+  }
+  .header-logo {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .header-nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Ajusta a seção intro */
   .intro-content {
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
+    padding: 0 10px;
   }
-  .intro-foto-cheia {
-    margin-left: 0;
+  .intro-texto, .intro-foto-cheia {
+    width: 100%;
+    text-align: center;
+    padding: 0;
   }
   .intro-foto-cheia img {
     width: 100%;
     max-width: 320px;
+    height: auto;
+  }
+
+  /* Ajusta a seção sobre */
+  .sobre-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 10px;
+  }
+  .sobre-foto img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+  .sobre-conteudo {
+    width: 100%;
+    text-align: center;
+    padding: 0;
   }
 }
 
