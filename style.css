@@ -95,6 +95,23 @@ a:hover {
   padding: 0 20px;
 }
 
+/* === HEADER: Estilização do cabeçalho, logo e navegação === */
+.header {
+  background: #f6f6f2;
+  color: #383934;
+  padding: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 0px 0px 0px;
+}
+
 /* === Header e Footer === */
 header, footer {
   background: var(--rosa-escuro);
