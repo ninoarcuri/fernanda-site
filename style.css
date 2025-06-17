@@ -1458,17 +1458,30 @@ form button[type="submit"]:hover {
 }
 
 @media (max-width: 900px) {
-  .sobre-container {
+  .header {
     flex-direction: column;
-    gap: 28px;
-    padding: 0 10px;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
   }
-  .sobre-foto img {
-    width: 140px;
-    height: 140px;
-  }
-  .sobre-conteudo {
+  .header-info, .header-foto, .header-col {
+    padding: 0;
+    align-items: center;
     text-align: center;
-    font-size: 1rem;
+    width: 100%;
+  }
+  .header-nav ul {
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    padding: 0;
+  }
+  .foto-perfil-header {
+    width: 90px;
+    height: 90px;
+    margin-top: 12px;
+  }
+  .logo-img {
+    margin-bottom: 8px;
   }
 }

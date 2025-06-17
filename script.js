@@ -1,5 +1,5 @@
-// Alerta de sucesso ao enviar o formulário
 document.addEventListener('DOMContentLoaded', function () {
+  // Alerta de sucesso ao enviar o formulário de contato (se existir)
   const form = document.querySelector('#contato form');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -9,18 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Scroll suave para seções ao clicar no menu
-  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  // Adicionar scroll suave ao clicar em links de navegação
+  // Scroll suave para todos os links internos
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -32,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Exibir/ocultar menu mobile ao clicar no ícone (estrutura do ícone deve ser criada no HTML)
+  // Menu mobile (só funciona se existir o ícone e o menu)
   const menuIcon = document.getElementById('menu-icon');
   const navUl = document.querySelector('nav ul');
   if (menuIcon && navUl) {
@@ -41,24 +30,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-
-
-  // FAQ acordeão
+  // FAQ: abre/fecha respostas ao clicar na pergunta
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', function () {
       const item = this.parentElement;
-      item.classList.toggle('open');
-      this.classList.toggle('active');
+      // Fecha todos os outros
+      document.querySelectorAll('.faq-item').forEach(i => {
+        if (i !== item) {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        }
+      });
+      // Alterna o atual
+      const isOpen = item.classList.toggle('open');
+      this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (isOpen) {
+        console.log('Pergunta aberta:', this.textContent.trim());
+      }
     });
   });
 
-  // Direciona o botão "Agende sua consulta inicial" para o link externo
-  const btn = document.querySelector('.sobre-agende-btn');
-  if (btn) {
+  // Todos os botões "Agende sua consulta inicial" abrem o link em nova aba
+  document.querySelectorAll('.sobre-agende-btn').forEach(function(btn) {
     btn.addEventListener('click', function () {
       window.open('https://form.respondi.app/lyML7wxf', '_blank');
     });
-  }
+  });
 });
 
-<script src="script.js"></script>
