@@ -546,8 +546,8 @@ form button[type="submit"]:hover {
 
 /* Estilo para a seção intro */
 .hero-intro {
-  background: #7d8d7d !important;
-  color: #383934;
+  background: #dee3c2 !important;
+  color: #535e1b;
   padding: 56px 0 48px 0;
   border-radius: 0 0 36px 36px;
 }
@@ -569,12 +569,12 @@ form button[type="submit"]:hover {
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 24px;
-  color: #f6f6f2 ;
+  color: #535e1b ;
 }
 
 .intro-texto p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #535e1b;
   margin-bottom: 0;
 }
 
@@ -1426,7 +1426,7 @@ form button[type="submit"]:hover {
 
 /* === Bloco Sobre - Novo Estilo === */
 .bloco-sobre.bloco-azul {
-  background: #7d8d7d;
+  background: #dee3c2;
   padding: 56px 0 48px 0;
   display: flex;
   justify-content: center;
@@ -1461,7 +1461,7 @@ form button[type="submit"]:hover {
 
 .sobre-conteudo {
   flex: 1;
-  color: #fff;
+  color: #535e1b;
   font-size: 1.13rem;
   line-height: 1.7;
   text-align: left;
@@ -1479,7 +1479,7 @@ form button[type="submit"]:hover {
 
 .sobre-agende-btn {
   margin-top: 24px;
-  background: #435743;
+  background: #535e1b;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -1524,5 +1524,49 @@ form button[type="submit"]:hover {
   }
   .logo-img {
     margin-bottom: 8px;
+  }
+}
+
+/* Menu toggle para mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--preto);
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+@media (max-width: 900px) {
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--branco);
+    position: absolute;
+    top: 70px; /* ajuste conforme seu header */
+    right: 16px;
+    box-shadow: 0 2px 12px rgba(125,141,125,0.10);
+    border-radius: 12px;
+    z-index: 100;
+    min-width: 180px;
+  }
+  .header-nav.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .header-container {
+    position: relative;
+  }
+  .header-nav a {
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+    color: var(--preto);
+    text-align: left;
+  }
+  .header-nav a:last-child {
+    border-bottom: none;
   }
 }
