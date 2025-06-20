@@ -33,15 +33,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // Menu hambúrguer para mobile
   const menuToggle = document.querySelector('.menu-toggle');
   const headerNav = document.querySelector('.header-nav');
+  const menuClose = document.querySelector('.menu-close');
+
   if (menuToggle && headerNav) {
     menuToggle.addEventListener('click', function () {
       headerNav.classList.toggle('show');
     });
-    // Fecha o menu ao clicar em um link
-    headerNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => headerNav.classList.remove('show'));
+  }
+  if (menuClose && headerNav) {
+    menuClose.addEventListener('click', function () {
+      headerNav.classList.remove('show');
     });
   }
+  // Fecha o menu ao clicar em um link
+  headerNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => headerNav.classList.remove('show'));
+  });
 
   // FAQ: abre/fecha respostas ao clicar na pergunta
   document.querySelectorAll('.faq-question').forEach(btn => {

@@ -420,13 +420,26 @@ form button[type="submit"]:hover {
 }
 
 @media (max-width: 700px) {
+  body,
+  .container,
+  section,
+  .intro-content,
+  .sintomas-container,
+  .acolhimento-content,
+  .atendimentos-container,
+  .sobre-container,
+  .act-timeline,
   .faq-list {
-    padding: 0 8px;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box;
   }
-  .faq-question,
-  .faq-answer {
-    padding-left: 12px;
-    padding-right: 12px;
+  .intro-content,
+  .sobre-container,
+  .acolhimento-content,
+  .atendimentos-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -1327,12 +1340,26 @@ form button[type="submit"]:hover {
 }
 
 @media (max-width: 700px) {
-  .acolhimento-content {
-    padding: 24px 12px;
-    max-width: 98vw;
+  body,
+  .container,
+  section,
+  .intro-content,
+  .sintomas-container,
+  .acolhimento-content,
+  .atendimentos-container,
+  .sobre-container,
+  .act-timeline,
+  .faq-list {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box;
   }
-  .bloco-acolhimento {
-    padding: 32px 0;
+  .intro-content,
+  .sobre-container,
+  .acolhimento-content,
+  .atendimentos-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -1538,12 +1565,28 @@ form button[type="submit"]:hover {
   margin-left: 16px;
 }
 
+.menu-close {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--preto, #383934);
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  z-index: 101;
+}
+
 @media (max-width: 900px) {
+    .menu-close {
+    display: block;
+  }
   .header-nav {
     display: none;
     flex-direction: column;
     background: var(--branco);
-    position: absolute;
+    position: relative;
     top: 70px; /* ajuste conforme seu header */
     right: 16px;
     box-shadow: 0 2px 12px rgba(125,141,125,0.10);
@@ -1568,5 +1611,15 @@ form button[type="submit"]:hover {
   }
   .header-nav a:last-child {
     border-bottom: none;
+  }
+  .header-nav {
+    position: absolute;
+    top: 70px; /* ajuste conforme seu header */
+    right: 16px;
+    background: var(--branco, #fff);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(125,141,125,0.10);
+    min-width: 180px;
+    padding-top: 36px;
   }
 }
