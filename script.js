@@ -21,15 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Menu mobile (só funciona se existir o ícone e o menu)
-  const menuIcon = document.getElementById('menu-icon');
-  const navUl = document.querySelector('nav ul');
-  if (menuIcon && navUl) {
-    menuIcon.addEventListener('click', function () {
-      navUl.classList.toggle('show');
-    });
-  }
-
   // Menu hambúrguer para mobile
   const menuToggle = document.querySelector('.menu-toggle');
   const headerNav = document.querySelector('.header-nav');
@@ -38,11 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
   if (menuToggle && headerNav) {
     menuToggle.addEventListener('click', function () {
       headerNav.classList.toggle('show');
+      menuToggle.setAttribute('aria-expanded', headerNav.classList.contains('show'));
     });
   }
   if (menuClose && headerNav) {
     menuClose.addEventListener('click', function () {
       headerNav.classList.remove('show');
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
   }
   // Fecha o menu ao clicar em um link
