@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
   <title>Fernanda Celestino | Psicóloga</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
   <div class="header-container">
     <!-- Logo e CRP -->
     <div class="header-logo">
-      <img src="images/Fernanda (1).png" alt="Psicologia" class="logo-img">
+      <img src="images/Fernanda.png" alt="Psicologia" class="logo-img">
     </div>
     <!-- Botão para abrir o menu (para dispositivos móveis) -->
     <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
@@ -31,6 +32,8 @@
       <a href="#act">ACT</a>
       <a href="#sobre">Sobre mim</a>
       <a href="#faq">Perguntas frequentes</a>
+      <!-- Nova opção para redes sociais -->
+      <a href="#instagram">Rede sociais</a>
     </nav>
   </div>
 </header>
@@ -45,7 +48,7 @@
     </div>
     <!-- Foto de destaque -->
     <div class="intro-foto-cheia">
-      <img src="images/001.jpeg" alt="Psicóloga Fernanda Celestino" />
+      <img src="images/p001.jpeg" alt="Psicóloga Fernanda Celestino" />
     </div>
   </div>
 </section>
@@ -167,9 +170,11 @@ itens.forEach(item => {
   <section id="sobre" class="bloco-sobre bloco-azul">
   <div class="sobre-container">
     <div class="sobre-foto">
-      <img src="images/002.jpeg" alt="Psicóloga Fernanda Cristina Celestino">
+      <img src="images/p002.jpeg" alt="Psicóloga Fernanda Celestino">
     </div>
     <div class="sobre-conteudo">
+      <!-- Título centralizado -->
+      <h2 style="text-align: center; margin-bottom: 18px;">Quem sou eu!</h2>
       <p>
         Me chamo Fernanda Cristina Celestino e sou Psicóloga formada pela Universidade São Judas Tadeu (USJT) e sou formanda em Terapia de Aceitação e Compromisso e Terapia Cognitivo-Comportamental pela Ello+.
       </p>
@@ -211,6 +216,29 @@ itens.forEach(item => {
       </div>
     </section>
 
+  <!-- Nova seção: Instagram, inspirada na print -->
+<section id="instagram" class="bloco-instagram">
+  <div class="instagram-header">
+    <!-- Título com estilo de título do site -->
+    <h2 class="instagram-titulo">Instagram</h2>
+    <!-- @ com link para o perfil -->
+    <a class="instagram-user" href="https://www.instagram.com/psifernandacelestino/" target="_blank" rel="noopener">@psifernandacelestino</a>
+  </div>
+  <div class="instagram-galeria">
+    <!-- Imagem 1 -->
+    <a href="https://www.instagram.com/p/DLxQ_xapQm3/?img_index=1" target="_blank" rel="noopener">
+      <img src="images/ins01.jpeg" alt="Publicação Instagram 1">
+    </a>
+    <!-- Imagem 2 -->
+    <a href="https://www.instagram.com/p/DLujnQYNR6-/?img_index=1" target="_blank" rel="noopener">
+      <img src="images/ins02.jpeg" alt="Publicação Instagram 2">
+    </a>
+    <!-- Imagem 3 -->
+    <a href="https://www.instagram.com/p/DLtUNj2vZ9m/?img_index=1" target="_blank" rel="noopener">
+      <img src="images/ins03.jpeg" alt="Publicação Instagram 3">
+    </a>
+  </div>
+</section>
 
     <section id="faq" class="hero hero-faq">
       <h2>Perguntas frequentes</h2>
@@ -241,6 +269,8 @@ itens.forEach(item => {
         </div>
       </div>
     </section>
+
+
 
   <footer>
     <p>&copy; 2025 Fernanda Celestino | Psicóloga CRP 06/199648</p>
